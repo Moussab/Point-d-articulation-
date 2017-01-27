@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<title>home</title>
+
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/graph.css" />
+
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<nav class="navbar navbar-inverse  navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">TPGO</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">HOME <span class="sr-only">(current)</span></a></li>
+        <li><a href="#Demonstration">demonstration</a></li>
+
+      </ul>
+      <form class="navbar-form navbar-left">
+
+        <button type="submit" class="btn btn-default">commencer</button>
+      </form>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!-- XXX:  -->
+<br><br>
+ <div class="container">
+  <div class="jumbotron">
+  <h1 align="center">Point d'articulation</h1>
+</div>
+<div class="row">
+  <div class="col-md-6">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">point d'articulation </h3>
+  </div>
+  <div class="panel-body">
+  <img src="images.png" alt="" width="102%"/>
+  </div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="panel panel-default">
+<div class="panel-heading">
+  <h3 class="panel-title">description </h3>
+</div>
+<div class="panel-body">
+    <div class="taskbody">
+          <a name="utps_faq_task_00006__1.3.1"></a><a name="1.3.1"></a><h4 class="sectiontitle">Proc&eacute;dure</h4>
+          <ol>
+          <li><span>Soit G un graphe à n sommets et m arêtes. Un algorithme trivial de complexité d'ordre O(nm) est le suivant :
+
+a = nombre de composantes connexes de G (déterminé à l'aide de l'algorithme de parcours en profondeur ou de l'algorithme de parcours en largeur)
+pour chaque sommet v de V ayant des arêtes incidentes
+retirer v de V
+b = nombre de composantes connexes de G une fois v éliminé
+si b > a
+v est un point d'articulation de G
+remettre en place v
+Cet algorithme est naïf, il en existe de bien meilleurs. John Hopcroft et Robert Tarjan en ont décrit un en 1973 de complexité d'ordre O(n+m) et qui utilise l'algorithme de parcours en profondeur.</span></li>
+          </ol>
+
+    </div>
+</div>
+</div>
+</div>
+
+</div>
+<br id="Demonstration"><br><br><br>
+<div class="jumbotron">
+  <h1 align="center" >Demonstration</h1>
+</div>
+<div class="row">
+  <div class="col-md-6">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><b>le graphe</b></h3>
+  </div>
+  <div class="panel-body" id="cy">
+
+  </div>
+</div>
+</div>
+ <div class="col-md-6">
+<div class="panel panel-default">
+                    <div class="panel-heading">
+                    <div class="box-line">
+                             <b>le nombre de sommets: </b>
+                            <input id="node-number-input" min="1" type="number" placeholder="5" class="number-input"/>
+                            <button onclick="updateGraphMatrix()" class="btn btn-primary">Valider</button>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+
+                          <table class="table">
+                        <thead>
+                            <tr id="table-header">
+                                <th></th>
+                                <th>1</th>
+                                <th>2</th>
+                                <th>3</th>
+                                <th>4</th>
+                                <th>5</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <tr>
+                                <th>1</th>
+                                <td>
+                                    <input id="11" type="checkbox" onclick="updateCell()" class="form-control" disabled/>
+                                </td>
+                                <td>
+                                    <input id="12" type="checkbox" onclick="updateCell()" class="form-control"/>
+                                </td>
+                                <td>
+                                    <input id="13" type="checkbox" onclick="updateCell()" class="form-control"/>
+                                </td>
+                                <td>
+                                    <input id="14" type="checkbox" onclick="updateCell()" class="form-control"/>
+                                </td>
+                                <td>
+                                    <input id="15" type="checkbox" onclick="updateCell()" class="form-control"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>2</th>
+                                <td>
+                                    <input id="21" type="checkbox" onclick="updateCell()" class="form-control"/>
+                                </td>
+                                <td>
+                                    <input id="22" type="checkbox" onclick="updateCell()" class="form-control" disabled/>
+                                </td>
+                                <td>
+                                    <input id="23" type="checkbox" onclick="updateCell()" class="form-control"/>
+                                </td>
+                                <td>
+                                    <input id="24" type="checkbox" onclick="updateCell()" class="form-control"/>
+                                </td>
+                                <td>
+                                    <input id="25" type="checkbox" onclick="updateCell()" class="form-control"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>3</th>
+                                <td>
+                                    <input id="31" type="checkbox" onclick="updateCell()" class="form-control"/>
+                                </td>
+                                <td>
+                                    <input id="32" type="checkbox" onclick="updateCell()" class="form-control"/>
+                                </td>
+                                <td>
+                                    <input id="33" type="checkbox" onclick="updateCell()" class="form-control" disabled/>
+                                </td>
+                                <td>
+                                    <input id="34" type="checkbox" onclick="updateCell()" class="form-control"/>
+                                </td>
+                                <td>
+                                    <input id="35" type="checkbox" onclick="updateCell()" class="form-control"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>4</th>
+                                <td>
+                                    <input id="41" type="checkbox" onclick="updateCell()" class="form-control"/>
+                                </td>
+                                <td>
+                                    <input id="42" type="checkbox" onclick="updateCell()" class="form-control"/>
+                                </td>
+                                <td>
+                                    <input id="43" type="checkbox" onclick="updateCell()" class="form-control"/>
+                                </td>
+                                <td>
+                                    <input id="44" type="checkbox" onclick="updateCell()" class="form-control" disabled/>
+                                </td>
+                                <td>
+                                    <input id="45" type="checkbox" onclick="updateCell()" class="form-control"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>5</th>
+                                <td>
+                                    <input id="51" type="checkbox" onclick="updateCell()" class="form-control"/>
+                                </td>
+                                <td>
+                                    <input id="52" type="checkbox" onclick="updateCell()" class="form-control"/>
+                                </td>
+                                <td>
+                                    <input id="53" type="checkbox" onclick="updateCell()" class="form-control"/>
+                                </td>
+                                <td>
+                                    <input id="54" type="checkbox" onclick="updateCell()" class="form-control"/>
+                                </td>
+                                <td>
+                                    <input id="55" type="checkbox" onclick="updateCell()" class="form-control" disabled/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+
+                    <div class="panel-footer">
+                        <div class="box-line">
+                            <button class="btn btn-primary" onclick="drawGraph1()">Tracer mon graphe</button>
+                            <button class="btn btn-primary" onclick="AP()">Déterminer les points d'articulation</button>
+                        </div>
+                    </div>
+                </div>
+</div>
+</div>
+ <div class="container-fluid">
+
+	<!-- SCRIPTS -->
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/pt1a.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+  <script src="cytoscape/cytoscape.js"></script>
+  <script src="js/script.js"></script>
+  <script type="text/javascript">
+    var cy = cytoscape({
+
+  container: document.getElementById('cy'), // container to render in
+
+  style: [ // the stylesheet for the graph
+    {
+      selector: 'node',
+      style: {
+        'background-color': '#666',
+        'label': 'data(id)'
+      }
+    },
+    {
+      selector: '.articulatPoints',
+      style: {
+        'background-color': 'red',
+        'label': 'data(id)'
+      }
+    },
+
+    {
+      selector: 'edge',
+      style: {
+        'width': 3,
+        'line-color': '#ccc',
+        'target-arrow-color': '#ccc',
+        'target-arrow-shape': 'triangle'
+      }
+    }
+  ],
+
+
+});
+
+  </script>
+
+
+</body>
+</html>
